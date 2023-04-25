@@ -17,3 +17,8 @@ print(empresa.index('C'))
 print(empresa.rfind('o'))
 python = ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']
 print('#'.join(python))
+print(empresa.startswith('Codificacion'))
+asd = '30DíasDePython'
+print(asd.isidentifier())
+sad = 'treinta_dias_de_python'
+print(sad.isidentifier())
