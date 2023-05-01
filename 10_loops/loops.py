@@ -79,10 +79,21 @@ countrie_data =[{
         "flag": "https://restcountries.eu/data/alb.svg",
         "currency": "Albanian lek"
     },]
+
+# Encontrar 
 languagis = 0
-for i in countrie_data:
-    for key in i:
+for dictt in countrie_data:
+    for key, value in dictt.items():
         if key == 'languages':
-            languagis += 1
+                languagis += 1
 print('-------------')
 print(languagis)
+print('------')
+# Encontrar los paises con mayor poblacion
+countrie_mayor = 0
+for dictt in countrie_data:
+    for key, value in dictt.items():
+        if key == 'population' and value > 1000000:
+            print(value)
+            countrie_mayor += 1
+print(countrie_mayor)
