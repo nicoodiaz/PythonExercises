@@ -45,7 +45,87 @@ def print_lst(lst):
         print(i)
 print_lst([1,4,6,4,2,11,456,1234,123, 'asd', 'basd'])
 
-def reverse_list(mtr):
-    for i in mtr:
-        print(i[-1])
+def reverse_list(lst):
+    reversed_lst = []
+    for i in range(len(lst)-1, -1, -1): #El len(lst)-1, para encontrar el ultimo indice
+                                        #El -1 para indicar que el bucle se detenga en i = -1
+                                        #El ultimo para decrementar el valor de i en cada iteracion        
+        reversed_lst.append(lst[i])
+    return reversed_lst
 print(reverse_list([1, 2, 3, 4, 5]))
+print(reverse_list(["A", "B", "C"]))
+
+def capitalize_list_items(lst):
+    new_lst = []
+    for i in lst:
+        new_lst.append([i.upper()])
+    return new_lst
+print(capitalize_list_items(['asd', 'dsa', 'bsa', 'gfd']))
+
+# def add_item(lst, item):
+#     new_lst = []
+#     lst2 = list(lst)
+#     lst2.append(item)
+#     new_lst.append(lst2)
+#     return new_lst
+def add_item(lst, item):
+    lst.append(item)
+    return lst
+food = ['Melon', 'Ciruela', 'Frutilla', 'Banana']
+print(add_item(food, 'Mango'))
+
+food = ['Melon', 'Ciruela', 'Frutilla', 'Banana', 'Kiwi']
+def remove_item(lst, item):
+    lst.remove(item)
+    return lst
+print(remove_item(food, 'Kiwi'))
+
+def sum_of_numbers(n):
+    total = 0
+    for i in range(n + 1):
+        total += i
+    return total
+print(sum_of_numbers(5))
+print(sum_of_numbers(10))
+print(sum_of_numbers(100))
+
+def sum_of_odds(n):
+    total = 0
+    for i in range(n + 1):
+        if i % 2 != 0:
+            total += i
+    return total
+print(sum_of_odds(6))
+print(sum_of_odds(9))
+
+def sum_of_odds(n):
+    total = 0
+    for i in range(n + 1):
+        if i % 2 == 0:
+            total += i
+    return total
+print(sum_of_odds(6))
+print(sum_of_odds(9))
+
+def evens_and_odds(n):
+    odds = 0
+    evens = 0
+    for i in range(n + 1):
+        if i % 2 != 0:
+            odds += 1
+        else:
+            evens += 1
+    return odds, evens
+print(evens_and_odds(100))
+            
+            
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+print(is_prime(5))
+print(is_prime(15))
