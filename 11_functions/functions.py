@@ -129,3 +129,29 @@ def is_prime(num):
 
 print(is_prime(5))
 print(is_prime(15))
+print('------------')
+def all_unique(lst):
+    return len(lst) == len(set(lst))
+
+print(all_unique([1, 2, 3, 4, 5]))
+print(all_unique([1, 2, 3, 4, 4]))
+print(all_unique(['a', 'b', 'c', 'd', 'e']))
+print(all_unique(['a', 'b', 'c', 'c', 'd']))
+
+print('------------')
+# verifica si todos los elementos de una lista son del mismo tipo de datos
+def same_data_type(lst):
+    types = [type(i) for i in lst]
+    return len(set(types)) == 1
+
+lst1 = [1, 2, 3, 4, 5]
+lst2 = [1, 2, 3, '4', '5']
+lst3 = ['a', 'b', 'c', 'd', 'e']
+lst4 = [1.0, 2.5, 3.1, 4.2]
+lst5 = [True, False, True]
+
+print(same_data_type(lst1))  
+print(same_data_type(lst2))  
+print(same_data_type(lst3))  
+print(same_data_type(lst4))  
+print(same_data_type(lst5))  
