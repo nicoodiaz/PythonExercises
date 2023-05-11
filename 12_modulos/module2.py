@@ -24,7 +24,7 @@ def user_id_gen_by_user():
     nums = string.digits
     simbols = string.punctuation
 
-    all = letters + nums + simbols
+    all_chars = letters + nums + simbols
     
     users = []
     
@@ -34,10 +34,29 @@ def user_id_gen_by_user():
     for x in range(cant):
         user_chars = []
         for i in range(chars):
-            caracter_random = random.choice(all)
+            caracter_random = random.choice(all_chars)
             user_chars.append(caracter_random)
         users_id = ''.join(user_chars)
         users.append(users_id)
     return users
 
 print(user_id_gen_by_user())
+
+
+def rgb_color_gen():
+    nums = range(255)
+    n = 0
+    rgb = []
+    while n != 3:
+        ale = random.choice(nums)
+        rgb.append(ale)
+        n += 1
+    return rgb
+
+print(rgb_color_gen())
+
+print('---------Exercise lvl2-------------')
+
+def list_of_hexa_colors():
+    pass
+    
