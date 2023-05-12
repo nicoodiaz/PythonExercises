@@ -57,6 +57,11 @@ print(rgb_color_gen())
 
 print('---------Exercise lvl2-------------')
 
-def list_of_hexa_colors():
-    pass
-    
+def list_of_hexa_colors(cant):
+    colors = []
+    for i in range(cant):
+        color_hex = '#' + ''.join([random.choice('0123456789abcdef') for j in range(6)])
+        colors.append(color_hex)
+    return colors
+
+print(list_of_hexa_colors(5))
