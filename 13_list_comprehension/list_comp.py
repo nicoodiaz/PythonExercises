@@ -9,3 +9,23 @@ print(one_lst)
 
 list_tuple = [(i, 1, i, i**2, i**3, i**4, i**5) for i in range(11)]
 print(list_tuple)
+
+countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+
+count_2 = [[country.upper(), country[0:3].upper(), capital.upper()] for [[country, capital]] in countries]
+print(count_2)
+
+print('-------')
+
+countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+count_3 = [{'country': country.upper(), 'city': city.upper()} for [[country, city]] in countries]
+print(count_3)
+
+print('-------')
+names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
+
+string = [f'{name} {lastname}' for [[name, lastname]] in names]
+print(string)
+
+print('-------')
+
