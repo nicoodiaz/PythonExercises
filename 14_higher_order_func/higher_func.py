@@ -84,3 +84,19 @@ print_full_name("Asabeneh", "Yetayeh",'Finland')
 
 print('---Ejercicios---')
 
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+countries_upper = list(map(lambda x: x.upper(), countries))
+print(countries_upper)
+
+print('---')
+
+square_lst = list(map(lambda x: x ** 2, numbers))
+print(square_lst)
+
+print('---')
+
+names_upper = list(map(lambda x: x.upper(), names))
+print(names_upper)
