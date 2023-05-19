@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 #Funcion como parametro
 def sum_numbers(nums):  # normal function
     return sum(nums)    # a sad function abusing the built-in sum function :<
@@ -100,3 +103,32 @@ print('---')
 
 names_upper = list(map(lambda x: x.upper(), names))
 print(names_upper)
+
+print('---')
+
+is_landin = list(filter(lambda x: 'land' in x, countries))
+print(is_landin)
+
+print('---')
+
+six_char = list(filter(lambda x: len(x) == 6, countries))
+print(six_char)
+
+print('---')
+
+moresix_char = list(filter(lambda x: len(x) > 6, countries))
+print(moresix_char)
+
+print('---')
+
+start_with_e = list(filter(lambda x: x.startswith('E'), countries))
+print(start_with_e)
+
+print('---')
+
+my_list = [10, "Hello", True, "Python", 3.14, "World"]
+lst_str = list(filter(lambda x: isinstance(x, str), my_list))
+print(lst_str)
+
+# sum_red = list(reduce(lambda x, y: x + y, numbers))
+# print(sum_red)
