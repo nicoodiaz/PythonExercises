@@ -15,3 +15,23 @@ try:
     print(f'You are {name}. And your age is {age}.')
 except Exception as e:
     print(e)
+
+#Para acceder al index y al item
+for index, item in enumerate([20, 30, 40]):
+    print(index, item)
+
+
+# Descomprimir
+countries =  ['Finlandia', 'Suecia', 'Noruega', 'Dinamarca', 'Islandia', 'Estonia', 'Rusia']
+*nordic_countries, es, ru = countries
+print(nordic_countries, 'es = ' + es, 'ru = ' + ru)
+
+
+# Packing Lists, a veces no sabemos cuantos argumentos se deben pasar a una funcion
+def sum_all(*args):
+    s = 0
+    for i in args:
+        s += i
+    return s
+print(sum_all(1, 2, 3))             # 6
+print(sum_all(1, 2, 3, 4, 5, 6, 7)) # 28
