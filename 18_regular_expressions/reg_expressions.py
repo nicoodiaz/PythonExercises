@@ -1,5 +1,5 @@
 import re
-
+from collections import Counter
 
 txt = 'Me encanta el lenguaje Python and SQL'
 match = re.match('Me encanta el lenguaje', txt, re.I)
@@ -64,3 +64,16 @@ print(matches)
 #Para que tambien busque con mayuscula, debemos pasarle un "flag", en este caso como tercer parametro (re.I)
 matches = re.findall(regex_pattern, txt, re.I)
 print(matches)
+
+print('---Ejercicios---')
+
+paragraph = 'I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.'
+
+#Obtener las palabras del parrafo
+words = re.findall(r'\w+', paragraph.lower())
+print(words)
+#Contar la frecuencia de las palabras
+words_count = Counter(words)
+print(words_count)
+most_common = sorted(words_count.items(), key=lambda x: (-x[1], x[0]))
+print(most_common)
