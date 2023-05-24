@@ -77,3 +77,27 @@ words_count = Counter(words)
 print(words_count)
 most_common = sorted(words_count.items(), key=lambda x: (-x[1], x[0]))
 print(most_common)
+
+print('------')
+def is_valid_variable(var):
+    #Se le pasan los parametro que tiene que tener la variable para que sea verdadera
+    #^[a-z] que comienze con minusculas
+    #[a-zA-Z0-9_]*$ despues del primer digito, puede tener cualquiera de estos
+    word = r'^[a-z][a-zA-Z0-9_]*$'
+    return bool(re.match(word, var))
+print(is_valid_variable('sAS'))
+
+print('-------')
+sentence = '''%I am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?'''
+def clean_text(sentence):
+    cleaned_text = re.sub('$|%|@|&|#|;', '', sentence)
+    return cleaned_text
+print(clean_text(sentence))
+cleaned_text = clean_text(sentence)
+print(cleaned_text)
+def most_frequent_word(text):
+    words = re.findall(r'\w+', text.lower())
+    words_count = Counter(words)
+    most_common = sorted(words_count.items(), key=lambda x: (-x[1], x[0]))
+    return most_common
+print(most_frequent_word(cleaned_text))
