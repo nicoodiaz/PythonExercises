@@ -15,11 +15,6 @@ f.close()
 #readlines(), lee todas las lines y devuelve una lista de estas
 f = open('./files/reading_file_example.txt')
 lines = f.readlines()
-count_line = 0
-# for i in lines:
-#     count_line += 1
-# print(count_line)
-# print('Aqui se cuenta las lineas de un txt')
 print(type(lines))
 print(lines)
 f.close()
@@ -30,3 +25,5 @@ with open('./files/reading_file_example.txt') as f:
     lines = f.read().splitlines()
     print(type(lines))
     print(lines)
+
+
