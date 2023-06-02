@@ -37,3 +37,22 @@ def more_languages(num_cnt):
         print(f'{idioma}: {cantidad} hablantes')
         
 more_languages(3)
+
+
+def contar_paises_mas_poblados(archivo, num_paises):
+    with open(archivo) as file:
+        data = json.load(file)
+    
+    # Ordenar los países por población de manera descendente
+    paises_ordenados = sorted(data, key=lambda x: x['population'], reverse=True)
+    
+    # Obtener los primeros "num_paises" países más poblados
+    paises_mas_poblados = paises_ordenados[:num_paises]
+    
+    return paises_mas_poblados
+
+# Ejemplo de uso
+num_paises_solicitados = 5
+archivo_json = './files/countries_data.json'
+cantidad_paises = contar_paises_mas_poblados(archivo_json, num_paises_solicitados)
+print(f"Número de países más poblados: {cantidad_paises}")
